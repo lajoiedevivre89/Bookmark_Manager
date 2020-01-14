@@ -6,7 +6,7 @@ describe Bookmark do
       bookmarks = Bookmark.all # call the class method all on the Bookmark class 
       expect(bookmarks).to include("https://www.bbc.co.uk/news") # bookmarks is the array - in our controller 
       expect(bookmarks).to include("https://www.youtube.com")
-      expect(bookmarks).to include("https://twitter.com/home")
+      expect(bookmarks).to include("http://www.makersacademy.com")
     end
   end
 end
