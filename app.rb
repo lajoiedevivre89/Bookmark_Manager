@@ -15,7 +15,7 @@ class BookmarkManager < Sinatra::Base
     #]
     #bookmarks.join
     @bookmarks = Bookmark.all
-    erb(:bookmarks/index)
+    erb(:'bookmarks/index')
   end
 
 
