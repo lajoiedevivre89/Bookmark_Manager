@@ -45,3 +45,19 @@ CREATE DATABASE bookmark_manager;
 
 4. Run query in file 01_create_bookmarks_table.sql
 
+## Testing Environment Setup
+
+``
+CREATE DATABASE bookmark_manager_test;
+
+```
+
+Connect to the database
+
+```
+\c bookmark_manager_test;
+
+```
+Run query in file 01_create_bookmarks_table.sql
+
+
