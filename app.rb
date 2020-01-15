@@ -8,12 +8,6 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    #bookmarks = [ 
-      #"https://www.bbc.co.uk/news",
-      #"https://www.youtube.com",
-      #"https://twitter.com/home"
-    #]
-    #bookmarks.join
     @bookmarks = Bookmark.all
     erb(:'bookmarks/index')
   end
