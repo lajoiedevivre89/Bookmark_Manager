@@ -47,7 +47,7 @@ CREATE DATABASE bookmark_manager;
 
 ## Testing Environment Setup
 
-``
+```
 CREATE DATABASE bookmark_manager_test;
 
 ```

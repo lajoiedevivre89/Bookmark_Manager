@@ -14,4 +14,15 @@ class Bookmark
     result = connection.exec("SELECT * FROM bookmarks;") # allows us to query the database connection i.e. we can now access the bookmarks table ('bookmarks')
     result.map { |bookmark| bookmark['url'] } # hash? as each bookmark will have an id and a url 
   end
+
+  def self.create(bookmark_url)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+
+    connection.exec("INSERT INTO bookmarks (url) VALUES ('#{bookmark_url}')")
+  end
+
 end
