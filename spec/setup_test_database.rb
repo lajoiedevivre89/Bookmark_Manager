@@ -5,9 +5,14 @@ def setup_test_database
   connection = PG.connect(dbname: 'bookmark_manager_test')
   connection.exec("TRUNCATE bookmarks")
 
-  connection.exec("INSERT INTO bookmarks VALUES(1, 'https://www.bbc.co.uk/news', 'BBC');")
-  connection.exec("INSERT INTO bookmarks VALUES(2, 'https://www.youtube.com', 'Youtube');")
-  connection.exec("INSERT INTO bookmarks VALUES(3, 'https://twitter.com/home', 'Twitter');")
-    
+  bookmark = Bookmark.create(url: 'https://www.bbc.co.uk/news', title: 'BBC')
+  Bookmark.create(url: 'https://www.youtube.com', title: 'Youtube')
+  Bookmark.create(url: 'https://twitter.com/home', title: 'Twitter')
+
 end
 
+def persisted_data(id:)
+  conn = PG.connect(dbname: 'bookmark_manager_test')
+  result = conn.query("SELECT * FROM bookmarks WHERE id = #{id};")
+  result.first
+end
