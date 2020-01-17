@@ -3,9 +3,9 @@ feature 'add bookmark' do
   
     visit('/')
     fill_in('title', with: 'Instagram')
-    fill_in('url', with: 'www.instagram.com')
+    fill_in('url', with: 'https://www.instagram.com')
     click_on('Submit')
 
-    expect(page).to have_link('Instagram', href:'www.instagram.com')
+    expect(page).to have_link('Instagram', href:'https://www.instagram.com')
   end
 end

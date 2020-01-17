@@ -9,6 +9,7 @@ def setup_test_database
   Bookmark.create(url: 'https://www.youtube.com', title: 'Youtube')
   Bookmark.create(url: 'https://twitter.com/home', title: 'Twitter')
 
+
 end
 
 def persisted_data(id:)
