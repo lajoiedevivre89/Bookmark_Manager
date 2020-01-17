@@ -17,11 +17,10 @@ class Bookmark
       connection = PG.connect(dbname: 'bookmark_manager')
     end
   
-    result = connection.exec("SELECT * FROM bookmarks;") # allows us to query the database connection i.e. we can now access the bookmarks table ('bookmarks')
+    result = connection.exec("SELECT * FROM bookmarks;") 
     result.map do |bookmark|
       Bookmark.new(id: bookmark['id'], title: bookmark['title'], url: bookmark['url'])
     end
-     # hash? as each bookmark will have an id and a url 
   end
 
   def self.create(title:, url:)

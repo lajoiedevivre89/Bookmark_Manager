@@ -1,10 +1,10 @@
 require 'bookmark'
 
 describe Bookmark do
-  describe '.all' do    # the . in front of the method name indicates that it is a class method    # is used for instance methods 
+  describe '.all' do   
     it 'returns all bookmarks' do
       
-      bookmarks = Bookmark.all # call the class method all on the Bookmark class 
+      bookmarks = Bookmark.all
       expect(bookmarks.first.title).to eq 'BBC'
       expect(bookmarks.last.title).to eq "Twitter"
     end
